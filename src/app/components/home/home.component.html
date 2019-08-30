@@ -1,0 +1,257 @@
+<app-search></app-search>
+<div class="row">
+  <div class="col-lg-6 col-md-12 mb-2">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title class="text-center">FLOOR MAP <br> <small> (Grid : 0.25 m) </small></mat-card-title>
+      </mat-card-header>
+      <!-- <img mat-card-image src="assets/img/mapView.png" alt="Map View">-->
+      <mat-card-content>
+        <canvas id="Canvas" width="{{canvasWidth}}" height="{{canvasHeight}}"></canvas>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-lg-6 col-md-12">
+    <div class="row">
+      <div class="col-md-6">
+        <mat-card class="h10">
+          <mat-card-header>
+            <mat-card-title>ASSETS</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row">
+              <div class="col-5">Total</div>
+              <div class="col-2">:</div>
+              <div class="col-5 text-left">1029</div>
+            </div>
+            <div class="row">
+              <div class="col-5">Active</div>
+              <div class="col-2">:</div>
+              <div class="col-5 text-left">830</div>
+            </div>
+            <div class="row">
+              <div class="col-5">Inactive</div>
+              <div class="col-2">:</div>
+              <div class="col-5 text-left">199</div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-md-6">
+        <mat-card class="h10">
+          <mat-card-header>
+            <mat-card-title>ASSET TRACKING</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row">
+              <div class="col-6">Most Moved</div>
+              <div class="col-1">:</div>
+              <div class="col-4">A099522</div>
+            </div>
+            <div class="row">
+              <div class="col-6">Least Moved</div>
+              <div class="col-1">:</div>
+              <div class="col-4">A0B0369</div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <mat-card class="h10">
+          <mat-card-header>
+            <mat-card-title>EMPLOYEE</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row">
+              <div class="col-5">Total</div>
+              <div class="col-1">:</div>
+              <div class="col-4">1038</div>
+            </div>
+            <div class="row">
+              <div class="col-5">Active</div>
+              <div class="col-1">:</div>
+              <div class="col-4">906</div>
+            </div>
+            <div class="row">
+              <div class="col-5">Inactive</div>
+              <div class="col-1">:</div>
+              <div class="col-4">132</div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-md-6">
+        <mat-card class="h10">
+          <mat-card-header>
+            <mat-card-title>EMPLOYEE TRACKING</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row">
+              <div class="col-6">Most Moved</div>
+              <div class="col-1">:</div>
+              <div class="col-4">A092847</div>
+            </div>
+            <div class="row">
+              <div class="col-6">Least Moved</div>
+              <div class="col-1">:</div>
+              <div class="col-4">A0B9302</div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <mat-card class="h10">
+          <mat-card-header>
+            <mat-card-title>STORAGE</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row">
+              <div class="col-5">Capacity</div>
+              <div class="col-1">:</div>
+              <div class="col-4">2283</div>
+            </div>
+            <div class="row">
+              <div class="col-5">Used</div>
+              <div class="col-1">:</div>
+              <div class="col-4">9201</div>
+            </div>
+            <div class="row">
+              <div class="col-5">Available</div>
+              <div class="col-1">:</div>
+              <div class="col-4">732</div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-md-6">
+        <mat-card class="h10">
+          <mat-card-header>
+            <mat-card-title>TOP LOCATION</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row">
+              <div class="col-6">Sterile Zone</div>
+              <div class="col-1">:</div>
+              <div class="col-4">9920</div>
+            </div>
+            <div class="row">
+              <div class="col-6">Soiled Zone</div>
+              <div class="col-1">:</div>
+              <div class="col-4">7362</div>
+            </div>
+            <div class="row">
+              <div class="col-6">Clean Store</div>
+              <div class="col-1">:</div>
+              <div class="col-4">193</div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <mat-card class="w-100">
+      <mat-card-header>
+        <mat-card-title>REAL TIME ACTIVITY TRACKING</mat-card-title>
+        <mat-card-actions>
+  
+          <button mat-icon-button matTooltip="Upload"><img src="assets/img/icons/upload.svg" alt="" width="20"></button>
+          <button mat-icon-button matTooltip="Download"><img src="assets/img/icons/download.svg" alt="" width="20"></button>
+        </mat-card-actions>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-table #table [dataSource]="dataSource" matSort class="text-center">
+  
+          <!-- Checkbox Column -->
+          <ng-container matColumnDef="select">
+            <mat-header-cell *matHeaderCellDef>
+              <mat-checkbox >
+              </mat-checkbox>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+              </mat-checkbox>
+            </mat-cell>
+          </ng-container>
+  
+          <!-- Assest Column -->
+          <ng-container matColumnDef="assestId">
+            <mat-header-cell *matHeaderCellDef> Assest ID </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.assestId}} </mat-cell>
+          </ng-container>
+  
+          <!-- Employee Column -->
+          <ng-container matColumnDef="employeeId">
+            <mat-header-cell *matHeaderCellDef> Employee ID </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.employeeId}} </mat-cell>
+          </ng-container>
+  
+          <!-- Current Location Column -->
+          <ng-container matColumnDef="currentLocation">
+            <mat-header-cell *matHeaderCellDef> Current Location </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.currentLocation}} </mat-cell>
+          </ng-container>
+  
+          <!-- Past Location Column -->
+          <ng-container matColumnDef="pastLocation">
+            <mat-header-cell *matHeaderCellDef> Past Location </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.pastLocation}} </mat-cell>
+          </ng-container>
+  
+          <!-- Date Column -->
+          <ng-container matColumnDef="starttime">
+            <mat-header-cell *matHeaderCellDef> StartTime </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.starttime }} </mat-cell>
+          </ng-container>
+  
+          <!-- Time Column -->
+          <ng-container matColumnDef="endtime">
+            <mat-header-cell *matHeaderCellDef> EndTime </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.endtime }} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="duration">
+            <mat-header-cell *matHeaderCellDef> Duration </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.duration }} </mat-cell>
+          </ng-container>
+  
+          <!-- Time Column -->
+          <ng-container matColumnDef="battery">
+            <mat-header-cell *matHeaderCellDef> Battery </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.battery | percent }} </mat-cell>
+          </ng-container>
+  
+          <!-- Actions Column -->
+          <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+            <mat-cell *matCellDef="let element; let i = index">
+              <button mat-icon-button matTooltip="Path" (click)="openDialog(i)">
+                <img src="assets/img/icons/path.svg" alt="" width="20">
+              </button>
+              <button mat-icon-button matTooltip="Edit">
+                <img src="assets/img/icons/edit.svg" alt="" width="20">
+              </button>
+              <button mat-icon-button matTooltip="Delete">
+                <img src="assets/img/icons/delete.svg" alt="" width="20">
+              </button>
+            </mat-cell>
+          </ng-container>
+  
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+          </mat-row>
+        </mat-table>
+        <mat-paginator #paginator [pageSize]="10" [showFirstLastButtons]="true">
+        </mat-paginator>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>

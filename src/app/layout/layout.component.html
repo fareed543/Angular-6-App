@@ -1,0 +1,79 @@
+<!-- <div class="container-flex">
+	<mat-toolbar>Widget Designer</mat-toolbar>
+	<div class="row" id="widget-designer" *ngIf="loading">
+
+		<div class="col-sm-3" id="">
+
+			<mat-card>
+				<mat-card-title>Available Properties</mat-card-title>
+				<hr>
+				<mat-card-content>
+					<h5>Draggable</h5>
+					<mat-list>
+						<mat-list-item draggable class="border-bottom border-left cursor-move" *ngFor="let device of devices"> {{ device.name }}</mat-list-item>
+					</mat-list>
+				</mat-card-content>
+			</mat-card>
+
+			<ng-container *ngFor="let solution of solutions">
+				<mat-accordion>
+					<mat-expansion-panel>
+						<mat-expansion-panel-header>
+							<mat-panel-title>
+								<h5 class="card-title">{{solution.name}}</h5>
+							</mat-panel-title>
+						</mat-expansion-panel-header>
+						<app-field-chips [fields]="solution.fields"></app-field-chips>
+					</mat-expansion-panel>
+				</mat-accordion>
+			</ng-container>
+
+		</div>
+
+		<div class="col-sm-9" id="">
+			<mat-card>
+				<mat-card-title>Selected Properties</mat-card-title>
+				<hr>
+
+				<mat-card-subtitle>
+					Add a panel
+					<button mat-mini-fab color="primary" (click)="addPanel()" matTooltip="Add Panel" matTooltipPosition="right">
+						<i class="fa fa-plus-circle"></i>
+					</button>
+				</mat-card-subtitle>
+
+				<mat-card-content>
+					<div class="row">
+						<div class="form" #panelGroup>
+
+							<div class="flex-row">
+								<ng-container *ngFor="let panel of panels">
+									<div class="panel">
+										<app-drop-panel [name]=panel (deleteMe)="close($event)" (selectedFields)="onItemDrop($event)"></app-drop-panel>
+									</div>
+								</ng-container>
+							</div>
+
+							<div class="button-row">
+								<button mat-raised-button color="warn" (click)="reset()">Reset</button>
+								<button mat-raised-button color="primary" (click)="reset()">Save</button>
+							</div>
+
+						</div>
+					</div>
+				</mat-card-content>
+
+			</mat-card>
+		</div>
+	</div>
+</div> -->
+
+<!-- <mat-drawer-container>
+	<mat-drawer mode="side" opened="true">Drawer content</mat-drawer>
+	<mat-drawer-content>
+			<app-search></app-search>
+		Main content
+	</mat-drawer-content>
+</mat-drawer-container> -->
+
+layout component

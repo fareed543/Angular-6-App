@@ -1,0 +1,11 @@
+<ul class="draggable-list">
+    <li draggable *ngFor="let field of fields" [dragData]="field">
+        <ng-container *ngIf="field.DataType === 'Group'; else fieldChip">
+            <span [ngClass]="getCssClass">{{field.Name}}</span>
+            <app-field-chips [fields]="field['columns']"></app-field-chips>
+        </ng-container>
+        <ng-template #fieldChip>
+            <span [ngClass]="getCssClass">{{field.Name}}</span>
+        </ng-template>
+    </li>
+</ul>

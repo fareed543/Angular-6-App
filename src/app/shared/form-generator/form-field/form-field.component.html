@@ -1,0 +1,40 @@
+<ng-container [ngSwitch]="field.DataType">
+    <ng-container *ngSwitchCase="'String'">
+        <div class="md-form">
+            <input mdbActive type="text" [value]="field.value" [id]="field.Name" [name]="field.Name" class="form-control">
+            <label [attr.for]="field.Name">{{field.Name}}</label>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'Num'">
+        <div class="md-form">
+            <input mdbActive type="text"  [value]="field.value" [id]="field.Name" [name]="field.Name" class="form-control">
+            <label [attr.for]="field.Name">{{field.Name}}</label>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'Bool'">
+        <div class="switch">
+            <label>
+                Off
+                <input [id]="field.Name" [name]="field.Name" type="checkbox">
+                <span class="lever"></span>
+                On
+            </label>
+        </div>
+        <!--
+            <section class="example-section">
+                    <mat-slide-toggle
+                        class="example-margin"
+                        [color]="'primary'"
+                        [checked]="checked"
+                        [disabled]="disabled">
+                      Slide me!
+                    </mat-slide-toggle>
+                  </section> -->
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+        <div class="md-form">
+            <input mdbActive type="text" [id]="field.Name" [name]="field.Name" class="form-control">
+            <label [attr.for]="field.Name">{{field.Name}}</label>
+        </div>
+    </ng-container>
+</ng-container>

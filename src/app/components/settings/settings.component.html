@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-12">
+    <mat-card>
+      <mat-card-content>
+        <mat-tab-group>
+          <mat-tab label="Battery">
+
+            <mat-card style="box-shadow: none !important;">
+              <mat-card-content>
+                  <ngx-datatable
+                    #myTable
+                    class='material'
+                    [limit]="10"
+                    [columnMode]="'force'"
+                    [headerHeight]="50"
+                    [footerHeight]="50"
+                    [rowHeight]="50"
+                    [scrollbarV]="false"
+                    [rows]='rows'
+                    (page)="onPage($event)"
+                    [selectionType]="'multi'">
+
+                  <!-- Column Templates -->
+                    <ngx-datatable-column
+                      [width]="50"
+                      [resizeable]="false"
+                      [sortable]="false"
+                      [draggable]="false"
+                      [canAutoResize]="false"
+                      [headerCheckboxable]="true"
+                      [checkboxable]="true">
+                    </ngx-datatable-column>
+
+                      <ngx-datatable-column name="Battery">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          {{row.Battery}}%
+                        </ng-template>
+                      </ngx-datatable-column>
+                  
+                      <ngx-datatable-column name="Icon">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          <img src="{{row.icon}}" width="20" alt="battery status" />
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column name="Action">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          {{row.AlertName}}
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column name="Age" >
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          <div class="table-action-icons">
+                            <button mat-icon-button><img src="assets/img/icons/delete.svg" alt="Delete icon" width="20"></button>
+                            <button mat-icon-button><img src="assets/img/icons/edit.svg" alt="Edit icon" width="20"></button>
+                          </div>
+                        </ng-template>
+                      </ngx-datatable-column>
+                    </ngx-datatable>
+                  </mat-card-content>
+                </mat-card>
+              </mat-tab>
+
+            <mat-tab label="GeoFence"> Content 2 </mat-tab>
+            <mat-tab label="Drops"> Content 3 </mat-tab>
+            <mat-tab label="Movements"> Movements </mat-tab>
+            <mat-tab label="Users"> Users </mat-tab>
+          </mat-tab-group>
+
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

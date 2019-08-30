@@ -1,0 +1,18 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg blue-grey lighten-5 fixed-top scrolling-navbar">
+	<logo>
+		<a class="navbar-brand" href="#">
+			<span class="logo"><i class="fa fa-signal"></i> Spatika IoT</span>
+		</a>
+	</logo>
+	<links>
+		<div class="button-row nav-pills">
+			<a mat-raised-button [matMenuTriggerFor]="widgets">Widgets <span class="fa fa-caret-down"></span></a>
+			<mat-menu #widgets="matMenu">
+				<a routerLink="/" routerLinkActive="" mat-menu-item>Design</a>
+				<a routerLink="/" routerLinkActive="" mat-menu-item>Edit</a>
+			</mat-menu>
+			<a mat-raised-button routerLink="/design" routerLinkActive="active">Design</a>
+			<a mat-raised-button routerLink="/devices" routerLinkActive="active">Devices</a>
+		</div>
+	</links>
+</mdb-navbar>

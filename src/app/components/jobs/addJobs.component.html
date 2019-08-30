@@ -1,0 +1,9 @@
+<form class="w-100">
+    <input matInput class="border-bottom mb-1" type="input" placeholder="Job Name">
+
+    <input matInput class="border-bottom" [matDatepicker]="picker" placeholder="Joining Date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+
+
+</form>

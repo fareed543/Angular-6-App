@@ -1,0 +1,12 @@
+<div class="form">
+    <ng-container *ngFor="let field of fields">
+        <ng-container *ngIf="field.DataType === 'Group'; else formField">
+            <app-form-field-group [fields]="field['columns']" [formGroup]="form"></app-form-field-group>
+        </ng-container>
+        <ng-template #formField>
+            <div class="row">
+                <app-form-field [field]="field" [form]="form"></app-form-field>
+            </div>
+        </ng-template>
+    </ng-container>
+</div>

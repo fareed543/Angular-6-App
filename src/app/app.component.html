@@ -1,0 +1,42 @@
+<div class="app">
+  <div class="body">
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-lg-1 p-0 col-md-2 h-100" *ngIf="hide">
+          <mat-card class="p-0 left-nav h-100">
+            <img src="assets/img/Circular_logo.svg" alt="transic logo" class="pt-3" width="100">
+            <div class="nav-menu pt-4">
+              <div class="menuItem {{rla.isActive ? 'actMenuItem' : ''}}" *ngFor="let menuItem of menuItems">
+                <a routerLink="{{menuItem.link}}" routerLinkActive="active" #rla="routerLinkActive">
+                  <!-- <img src="{{rla.isActive ? menuItem.iconAtv : menuItem.icon}}" alt="{{menuItem.name}}" /> -->
+                  <img src="{{menuItem.icon}}" alt="{{menuItem.name}}" />
+                  <p class="text-center f-12">{{menuItem.name}}</p>
+                </a>
+              </div>
+              
+              <div class="menuItem mb-3">
+                <a (click)="logout()">
+                  <img src="assets/img/logout-light.svg" alt="logout img" />
+                  <p class="text-center f-12">Logout</p>
+                </a>
+              </div>
+
+            </div>
+          </mat-card>
+        </div>
+
+        <div [ngClass]="hide ? 'col-md-11' : 'col-md-12' ">
+          <div class="container mt-3 lg-min-width p-0">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+<app-footer></app-footer>

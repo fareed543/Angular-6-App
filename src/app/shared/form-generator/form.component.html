@@ -1,0 +1,10 @@
+<div class="form-group">
+    <form [formGroup]="form"><!--
+        <div *ngFor="let field of fields" class="row">
+            <app-form-field [field]="field" [form]="form"></app-form-field>
+        </div> -->
+        <ng-container *ngIf="fields && fields.length > 0">
+            <app-form-field-group [fields]="fields" [form]="form"></app-form-field-group>
+        </ng-container>
+    </form>
+</div>

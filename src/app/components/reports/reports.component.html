@@ -1,0 +1,169 @@
+<mat-card>
+  <mat-card-content>
+    <div class="row">
+      <div class="col-md-1 pt-3">Module</div>
+      <div class="col-md-2">
+        <mat-form-field>
+          <mat-select placeholder="Select Module" [(ngModel)]="selectedModule">
+            <mat-option *ngFor="let module of modules" [value]="module.value">
+              {{module.value}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6"></div>
+      <div class="col-md-1 pt-3 pl-0 pr-0">Add Filter:</div>
+      <div class="col-md-2">
+        <mat-form-field>
+          <mat-select placeholder="Select Type" [(ngModel)]="selectedType" (change)="view()">
+            <mat-option *ngFor="let type of moduleType" [value]="type.name">
+              {{type.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+    </div>
+
+    
+    <div class="row" *ngIf="assetView">
+      <div class="col-md-1 pt-3">Asset: </div>
+      <div class="col-md-3">
+        <mat-form-field>
+          <mat-select placeholder="Select Asset Name" [(ngModel)]="selectedAssetName">
+            <mat-option value="contains">Contains</mat-option>
+            <mat-option value="dontContains">Dosen't Contains</mat-option>
+            <mat-option value="any">Any</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-3">
+        <mat-form-field>
+          <input matInput placeholder="">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row" *ngIf="empView">
+      <div class="col-md-1 pt-3">Employee: </div>
+      <div class="col-md-3">
+        <mat-form-field>
+          <mat-select placeholder="Select Employee Name" [(ngModel)]="selectedEmpName">
+            <mat-option value="contains">Contains</mat-option>
+            <mat-option value="dontContains">Dosen't Contains</mat-option>
+            <mat-option value="any">Any</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-3">
+        <mat-form-field>
+          <input matInput placeholder="">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row" *ngIf="dateView">
+      <div class="col-md-1 pt-3">Date: </div>
+      <div class="col-md-3">
+        <mat-form-field>
+          <mat-select placeholder="Select" [(ngModel)]="selectedDate">
+            <mat-option value="is"> is </mat-option>
+            <mat-option value="grater"> >= </mat-option>
+            <mat-option value="less"> <= </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-3">
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card >
+  <mat-card-content>
+
+
+    <div class="row">
+      <ngx-datatable
+        #myTable
+        class='material w-100'
+        [limit]="10"
+        [columnMode]="'force'"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        [rowHeight]="50"
+        [scrollbarV]="false"
+        [rows]='reportRow'
+        [selectionType]="'multi'">
+
+          <!-- Column Templates -->
+          <ngx-datatable-column
+            [width]="50"
+            [resizeable]="false"
+            [sortable]="false"
+            [draggable]="false"
+            [canAutoResize]="false"
+            [headerCheckboxable]="true"
+            [checkboxable]="true">
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="Asset ID">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              {{row.AssestID}}
+            </ng-template>
+          </ngx-datatable-column>
+          
+          <ngx-datatable-column name="Description">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                {{row.Description}}
+            </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="Last Accessed By">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              {{row.LastAccessedBy}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Date">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              {{row.Date}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Time">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                {{row.Time}}
+            </ng-template>
+          </ngx-datatable-column>
+          
+          <ngx-datatable-column name="Battery">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                {{row.Battery}}
+            </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="Actions">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              <div class="table-action-icons">
+                <button mat-icon-button matTooltip="Path">
+                  <img src="assets/img/icons/path.svg" alt="Path" width="20">
+                </button>
+                <button mat-icon-button matTooltip="Edit">
+                  <img src="assets/img/icons/edit.svg" alt="" width="20">
+                </button>
+                <button mat-icon-button matTooltip="Delete">
+                  <img src="assets/img/icons/delete.svg" alt="" width="20">
+                </button>
+              </div>
+            </ng-template>
+          </ngx-datatable-column>
+
+      </ngx-datatable>
+    </div>
+  </mat-card-content>
+</mat-card>
