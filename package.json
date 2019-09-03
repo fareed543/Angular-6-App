@@ -24,6 +24,7 @@
     "@angular/router": "^6.0.3",
     "@swimlane/ngx-datatable": "^15.0.2",
     "angular-bootstrap-md": "^6.1.1",
+    "bootstrap": "3.3.5",
     "chart.js": "^2.5.0",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
