@@ -1,14 +1,14 @@
 <div class="row" style="margin-top:5%">
-  <div class="w-25 m-auto">
+  <div class="m-auto">
     <form (ngSubmit)="onLogin()" [formGroup]="loginForm">
       <div class="login-box">
         <div class="login-img text-center">
           <img src="/assets/img/spatika-logo-dark.svg" alt="spatika logo" width="280px">
         </div>
         <div class="login-body p-1">
-          <input matInput placeholder="email" type="text" formControlName="username">
+          <input matInput placeholder="email" type="text" class="form-control" formControlName="username">
           <hr class="m-0">
-          <input matInput placeholder="password" type="password" formControlName="password">
+          <input matInput placeholder="password" type="password" class="form-control" formControlName="password">
         </div>
         <div class="login-action">
           <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Sign In</button>
@@ -24,7 +24,7 @@
           <input matInput class="pl-2" color="primary" placeholder="Username" type="text" formControlName="username"
             required>
           <input matInput class="pl-2" placeholder="Password" type="password" formControlName="password" required>
-         
+
         </mat-card-content>
         <mat-card-actions class="w-25 m-auto">
           <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
